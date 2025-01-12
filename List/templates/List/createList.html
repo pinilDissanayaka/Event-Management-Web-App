@@ -5,16 +5,19 @@
 
 {% block form %}
 <!-- Form controls -->
-<div class="col-md-6">
-  <div class="card mb-4">
-    <h5 class="card-header">Form Controls</h5>
-    <div class="card-body">
-      <form action="{% url 'create_list' %}" method="POST">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+<div class="d-flex justify-content-center">
+  <div class="col-md-6">
+    <div class="card mb-4">
+      <h5 class="card-header">Add Item</h5>
+      <div class="card-body">
+        <form action="{% url 'create_list' %}" method="POST">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <br>
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

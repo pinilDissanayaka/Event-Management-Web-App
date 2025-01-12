@@ -21,4 +21,6 @@ from . import views
 
 urlpatterns = [
     path("", views.create_list, name="create_list"),
+    path("items/", views.items, name="items"),
+    path("item/<int:id>", views.item, name="item"),
 ]

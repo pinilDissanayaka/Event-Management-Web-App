@@ -1,8 +1,25 @@
 from django.shortcuts import render
 from django.http import HttpResponse 
 from .forms import ListCreationForm
+from .models import List
 
 # Create your views here.
+
+def items(request):
+    list_items = List.objects.all()
+    return render(request, 'List/list.html', {"list_items": list_items})
+
+def item(request, id):
+    if request.method == "GET":
+        list_item = List.objects.filter(id=id)
+
+        return HttpResponse(list_item)
+    elif request.method == "DELETE":
+        list_item = List.objects.filter(id=id)
+        list_item.delete()
+        return HttpResponse("Deleted")
+
+
 
 
 def create_list(request):
