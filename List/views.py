@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse 
 from .forms import ListCreationForm
 from .models import List
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def items(request):
     list_items = List.objects.all()
     return render(request, 'List/list.html', {"list_items": list_items})
@@ -23,8 +25,7 @@ def item(request, id):
         return HttpResponse("Updated")
 
 
-
-
+@login_required
 def create_list(request):
     if request.method == "POST":
         form = ListCreationForm(request.POST)
