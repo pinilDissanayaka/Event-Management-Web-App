@@ -19,10 +19,8 @@ def register_view(request):
             )
 
             login(request, user)
-
-            next = request.GET.get("next") or request.POST.get("next") or "items"
              
-            return redirect(next)
+            return redirect("items")
         else:
             return render(request, "authApp/register.html", {"form": form, "errors": form.errors})
     else:
@@ -43,3 +41,10 @@ def login_view(request):
             return render(request, "authApp/login.html", {"error": "Invalid username or password"})
     else:
         return render(request, "authApp/login.html")
+
+
+def logout_view(request):
+
+    logout(request)
+
+    return redirect("login")

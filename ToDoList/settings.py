@@ -55,6 +55,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "ToDoList.urls"
 
+LOGIN_URL = '/auth/login/'
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
