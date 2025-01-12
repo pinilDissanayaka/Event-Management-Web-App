@@ -12,12 +12,15 @@ def items(request):
 def item(request, id):
     if request.method == "GET":
         list_item = List.objects.filter(id=id)
-
         return HttpResponse(list_item)
     elif request.method == "DELETE":
         list_item = List.objects.filter(id=id)
         list_item.delete()
         return HttpResponse("Deleted")
+    elif request.method == "PUT":
+        list_item = List.objects.filter(id=id)
+        list_item.update(status=True)
+        return HttpResponse("Updated")
 
 
 
