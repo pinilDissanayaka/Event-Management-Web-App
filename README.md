@@ -10,12 +10,13 @@ A simple and intuitive ToDoList web application built with Django to manage dail
 
 ## 📸 Screenshots
 1. Home Page (Task List)
+![Screenshot 2025-01-12 210452](https://github.com/user-attachments/assets/552f4832-dccc-4844-8eed-42b667645131)
 
 2. Add New Task
+![Screenshot 2025-01-12 210502](https://github.com/user-attachments/assets/98c8e656-fac3-4f9c-b12f-420be47c03cd)
 
-3. Edit Task
-
-4. User Login
+3. User Login
+![Screenshot 2025-01-12 210407](https://github.com/user-attachments/assets/7c341ad0-fb62-419c-875f-ca92fb665834)
 
 ## 💻 Tech Stack
 - Backend: Django Framework
